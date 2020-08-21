@@ -5,3 +5,9 @@ body {
     background-image: linear-gradient(rgba(119, 141, 175, 0.4) .1em, transparent .1em), linear-gradient(90deg, rgba(119, 141, 175, 0.4) .1em, transparent .1em);
     background-size: 2em 2em;
 }
+
+h1 {
+    font-family: $logoFont;
+    font-size: 50px;
+    color: white;
+}
