@@ -7,7 +7,7 @@ export default function LoginForm() {
             <input placeholder='user name' type='text' />
             <input placeholder='password' type='text' />
             <button>Login</button>
-            <p>Forgot Password</p> | <p>Create Account</p>
+            <a href="#">Forgot Password</a> | <a href='#'>Create Account</a>
             </form>
         </div>
     )
