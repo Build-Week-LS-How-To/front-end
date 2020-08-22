@@ -1,0 +1,29 @@
+.form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0 auto;
+  background: whitesmoke;
+  width: 400px;
+}
+
+.input {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+input, Button, .link {
+  width: 50%;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
+h1 {
+  text-align: center;
+}
+/*# sourceMappingURL=Login.css.map */
