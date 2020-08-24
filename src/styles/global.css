@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #0E4595;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.1em, rgba(119, 141, 175, 0.4)), color-stop(0.1em, transparent)), -webkit-gradient(linear, left top, right top, color-stop(0.1em, rgba(119, 141, 175, 0.4)), color-stop(0.1em, transparent));
+  background-image: linear-gradient(rgba(119, 141, 175, 0.4) 0.1em, transparent 0.1em), linear-gradient(90deg, rgba(119, 141, 175, 0.4) 0.1em, transparent 0.1em);
+  background-size: 2em 2em;
+}
+
+h1 {
+  font-family: "Cabin Sketch", cursive;
+  font-size: 50px;
+  color: white;
+}
+/*# sourceMappingURL=global.css.map */
