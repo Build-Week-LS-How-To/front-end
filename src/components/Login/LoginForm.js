@@ -1,15 +1,20 @@
 import React from 'react'
-import {Form ,Button} from 'reactstrap';
+import {
+    Form,
+    Button,
+    Card,
+    Input
+} from 'reactstrap';
 
 export default function LoginForm() {
     return (
-        <div>
-            <Form className='form'>
-            <input placeholder='user name' type='text' />
-            <input placeholder='password' type='text' />
-            <Button color="primary">Login!</Button>
-            <div className="link"><a href="#">Forgot Password</a></div>
+        <Card className="loginForm-card">
+            <Form>
+                <Input placeholder='user name' type='text' />
+                <Input placeholder='password' type='text' />
+                <Button block color="primary">Login!</Button>
+                <div className="link"><a href="#">Forgot Password</a></div>
             </Form>
-        </div>
+        </Card>
     )
 }
