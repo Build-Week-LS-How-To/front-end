@@ -1,0 +1,30 @@
+@import './imports.scss';
+
+.signup-container {
+
+    margin-top: 100px;
+
+    .signup-information-container {
+
+        color: white;
+        text-align: left;
+
+        .signup-logo {
+            margin: 5% 20%;
+        }
+
+        h1 {
+            text-align: left;
+        }
+
+        
+
+    }
+
+    .signup-form-container {
+
+        .signup-form-card {
+            padding: $formPadding;
+        }
+    }
+}

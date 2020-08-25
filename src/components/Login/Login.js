@@ -1,13 +1,28 @@
 import React from 'react';
+
+// STYLES
+import '../../styles/Login.scss'
+
+// COMPONENTS
 import LoginForm from './LoginForm';
-import './Login.css';
+import {
+    Container,
+    Row,
+    Col
+} from 'reactstrap'
+
+// IMAGES
+import Logo from '../../images/HowToLogoMain_White.svg'
+
+
+
 const Login = () => {
  
     return(
-       <div>
-       <h1>HOW TO</h1>
-       <LoginForm />
-        </div>
+       <Container className="login-container">
+            <img className="login-logo" src={ Logo } alt="logo" />
+            <LoginForm />
+        </Container>
     )
 
 }
