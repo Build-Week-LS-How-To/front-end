@@ -28,3 +28,23 @@ export const fetchHacks = () => dispatch => {
             })
         })
 }
+
+export const fetchAllHacks = () => dispatch => {
+    dispatch ({ type: FETCH_HACKS_START })
+    
+    axios
+        .get('https://jsonplaceholder.typicode.com/posts/')
+        .then( res => {
+            console.log("Data from fetchHacks reducer", res.data)
+            dispatch({
+                type: FETCH_HACKS_SUCCESS,
+                payload: res.data
+            })
+        })
+        .catch( err => {
+            dispatch({
+                type: FETCH_HACKS_ERROR,
+                payload: err.message
+            })
+        })
+}

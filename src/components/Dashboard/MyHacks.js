@@ -8,8 +8,6 @@ import { fetchHacks } from '../../actions/dashboard-hacks'
 import MyHacksCard from './MyHacksCard'
 import {
     Spinner,
-    CardTitle,
-    CardText
 } from 'reactstrap'
 
 const MyHacks = (props) => {
@@ -45,7 +43,6 @@ const MyHacks = (props) => {
 }
 
 const mapStateToProps = (state) => {
-    console.log(state.isFetching)
     return {
         isFetching: state.isFetching,
         hacks: state.hacks,
