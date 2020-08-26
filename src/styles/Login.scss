@@ -15,29 +15,19 @@
     input {
         margin-bottom: 10px;
     }
+
+    button {
+        background-color: $primaryBlue;
+    }
+
+    .link {
+        text-align: center;
+        margin-top: 10px;
+        padding-top:10px;
+        border-top: 1px solid $accentBlue;
+        a {
+            color: $primaryBlue;
+            text-decoration: underline;
+        }
+    }
 }
-
-// .form{
-//     display:flex;
-//     flex-direction: column;
-//     margin:0 auto;
-//     background:whitesmoke;
-//     width:400px;
-//     border-radius: 10px;
-   
-// }
-// .input{
-//     margin-bottom: 10px;
-//     margin-top: 10px;
-
-// }
-// input,Button,.link{
-//     width:50%;
-//     text-align: center;
-//     margin:0 auto;
-//     margin-top: 10px;
-// }
-
-// h1{
-//     text-align: center;
-// }
