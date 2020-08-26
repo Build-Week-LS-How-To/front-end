@@ -1,7 +1,7 @@
 import React from 'react';
 
 // STYLES
-import '../../styles/CreateAccountInformation.scss';
+import '../../styles/createAccount.scss';
 
 // IMAGES
 import LightBulb from '../../images/LightBulb_White.svg'
