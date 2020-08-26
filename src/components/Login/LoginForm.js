@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useHistory } from 'react-router-dom'
+import { useHistory, Link } from 'react-router-dom'
 import axiosWithAuth from '../../utils/axiosWithAuth';
 
 import {
@@ -11,7 +11,10 @@ import {
 
 const LoginForm = (props) => {
 
-    let history = useHistory();
+    /*
+        TODO:
+        1) Handle Errors in the login for the UI
+    */
 
     const [login, setLogin] = useState ({
         username: '',
@@ -25,12 +28,12 @@ const LoginForm = (props) => {
         })
     }
 
+    let history = useHistory();
     const handleLogin = (e) => {
         e.preventDefault();
         axiosWithAuth()
             .post('/api/users/login', login)
             .then( res => {
-                console.log(res)
                 localStorage.setItem('token', res.data.token)
                 history.push('/dashboard')
             })
@@ -66,7 +69,10 @@ const LoginForm = (props) => {
                     block
                 >Login!</Button>
 
-                <div className="link"><a href="#">Create An Account</a></div>
+                <div className="link">
+                    <Link to="/create-account">Create An Account</Link>
+                </div>
+
             </Form>
         </Card>
     )
