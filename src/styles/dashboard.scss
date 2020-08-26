@@ -1,0 +1,12 @@
+@import './imports.scss';
+
+.dashboard-container {
+    .dashboard-card {
+        padding: 20px;
+    }
+    
+    h2, h3 {
+        font-family: $logoFont;
+        color: $primaryBlue;
+    }
+}
