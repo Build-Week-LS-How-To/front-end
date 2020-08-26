@@ -25,6 +25,10 @@
 
         .signup-form-card {
             padding: $formPadding;
+
+            button {
+                background-color: $primaryBlue;
+            }
         }
     }
 }

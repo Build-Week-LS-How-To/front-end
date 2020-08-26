@@ -6,9 +6,7 @@ import '../../styles/Login.scss'
 // COMPONENTS
 import LoginForm from './LoginForm';
 import {
-    Container,
-    Row,
-    Col
+    Container
 } from 'reactstrap'
 
 // IMAGES
