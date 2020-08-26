@@ -1,18 +1,59 @@
 import React from 'react'
 
+// REDUX
+import { connect } from 'react-redux'
+import { fetchHacks } from '../../actions/dashboard-hacks'
+
 // COMPONENTS
 import MyHacksCard from './MyHacksCard'
+import {
+    Spinner,
+    CardTitle,
+    CardText
+} from 'reactstrap'
 
-const MyHacks = () => {
+const MyHacks = (props) => {
 
     return(
         <div className="dashboard-myhacks">
-            <h3>Welcome Back, Chris!</h3>
-            <hr/> 
+            <h3>Welcome Back, Chris</h3>
+            <hr/>
             <h2>My Hacks</h2>
-            <MyHacksCard />
+            {props.isFetching ? (
+                <div className="fetchng">
+                    <Spinner style={{width: '3rem', height: '3rem'}} type="grow"/>
+                    {props.fetchHacks()}
+                </div>
+            ) : (
+                <div className="cards">
+                    {console.log(props)}
+                    
+                    {props.hacks.map ( hack => {
+                        return(
+                            <MyHacksCard
+                                key={hack.userId === 1}
+                                title={hack.title}
+                                body={hack.body}
+                                userId={hack.userId}
+                            />
+                        )
+                    })}
+                </div>
+            )}
         </div>
     )
 }
 
-export default MyHacks
+const mapStateToProps = (state) => {
+    console.log(state.isFetching)
+    return {
+        isFetching: state.isFetching,
+        hacks: state.hacks,
+        error: state.error
+    }
+}
+
+export default connect(
+    mapStateToProps,
+    { fetchHacks }
+)(MyHacks)

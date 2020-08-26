@@ -5,12 +5,27 @@ import { BrowserRouter as Router } from 'react-router-dom';
 // COMPONENTS
 import App from './components/App';
 
+// REDUX
+import { Provider } from 'react-redux'
+import thunk from 'redux-thunk'
+import { createStore, applyMiddleware } from 'redux'
+import { composeWithDevTools } from 'redux-devtools-extension'
+
+// REDUCERS
+// import combineReducers from './reducers'
+import hacksReducer from './reducers/hacks'
+
+// STORE
+const store = createStore(hacksReducer, composeWithDevTools(
+  applyMiddleware(thunk)
+))
+
 ReactDOM.render(
-  <React.StrictMode>
-    <Router>
-      <App />
-    </Router>
-  </React.StrictMode>,
+    <Provider store = {store}>
+      <Router>
+        <App />
+      </Router>
+    </Provider>,
   document.getElementById('root')
 );
 
