@@ -1,0 +1,33 @@
+@import './imports.scss';
+
+.login-container {
+    padding: 5% 25%;
+
+    .login-logo {
+        margin: 3% 10%;
+    }
+}
+
+.loginForm-card {
+    padding: $formPadding;
+    padding-top: 50px;
+
+    input {
+        margin-bottom: 10px;
+    }
+
+    button {
+        background-color: $primaryBlue;
+    }
+
+    .link {
+        text-align: center;
+        margin-top: 10px;
+        padding-top:10px;
+        border-top: 1px solid $accentBlue;
+        a {
+            color: $primaryBlue;
+            text-decoration: underline;
+        }
+    }
+}
