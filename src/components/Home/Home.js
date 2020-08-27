@@ -10,12 +10,15 @@ import { Spinner } from 'reactstrap'
 
 // COMPONENTS
 import HomeHacksCard from './HomeHacksCard'
+import SearchBar from './SearchBar'
 
 const HomePage = (props) => {
 
     return(
         <div className="homepage-hacks">
         <h1>Welcome to How To</h1>
+        <SearchBar />
+        
         {props.isFetching ? (
             <div className="fetchng">
                 <Spinner style={{width: '3rem', height: '3rem'}} type="grow"/>
@@ -23,7 +26,7 @@ const HomePage = (props) => {
             </div>
         ) : (
             <div className="cards">
-                {console.log(props)}
+                
                 {props.hacks.map ( hack => {
                     return (
                         <HomeHacksCard
