@@ -12,7 +12,7 @@ const MyHacksCard = (props) => {
             <CardTitle className="dashboard-hack-title">{props.title}</CardTitle>
             <CardText className="dashboard-hack-description">{props.body}</CardText>
 
-            <CardFooter className={`${"dashboard-hack-footer", props.userId}`}>
+            <CardFooter className="dashboard-hack-footer">
                 <div>User Id: {props.userId}</div>
 
                 <div className="icons">

@@ -3,7 +3,6 @@ import React from 'react';
 import {
     Input,
     FormGroup,
-    Button,
     Label,
     FormText
 } from 'reactstrap'
