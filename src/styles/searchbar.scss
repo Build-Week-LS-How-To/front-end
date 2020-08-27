@@ -1,9 +1,19 @@
-.searchbar-form {
-    display: flex;
-    padding:2%;
-    flex-wrap:nowrap;
-}
+@import '../styles/imports.scss';
 
-Card {
-    width:50%;
+.searchbar {
+    margin-bottom: 20px;
+
+    .searchbar-form {
+        padding:20px;
+        display: flex;
+        align-items: space-around;
+    }
+
+    button {
+        margin-left: 2%;
+        background-color: $primaryBlue;
+        border: none;
+    }
+
+
 }

@@ -1,0 +1,37 @@
+@import './imports.scss';
+
+.dashboard-container {
+    .dashboard-card {
+        padding: 20px;
+    }
+
+    .myHacks {
+        .dashboard-hack {
+            margin-top: 20px;
+
+            .dashboard-hack-title {
+                margin: 10px 20px 5px;
+                font-size: 1.25rem;
+            }
+    
+            .dashboard-hack-description {
+                margin: 5px 20px;
+            }
+    
+            .dashboard-hack-footer {
+                display: flex;
+                justify-content: space-between;
+    
+                .hackIcon {
+                    margin-left: 7px;
+                    height: 20px;
+                }
+            }
+        }
+    }
+    
+    h2, h3 {
+        font-family: $logoFont;
+        color: $primaryBlue;
+    }
+}
