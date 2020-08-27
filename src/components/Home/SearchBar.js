@@ -12,7 +12,7 @@ import {
 
 export default function SearchBar() {
     return (
-        <Card>
+        <Card className="searchbar">
             <Form className='searchbar-form'>
                 <Input placeholder='Search for Life Hacks' type='text' />
                 <Button>Search</Button>
