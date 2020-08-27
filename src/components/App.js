@@ -28,7 +28,7 @@ function App() {
             <Route exact path="/" component={ HomePage } />
             <Route exact path="/login" component={ Login } />
             <Route exact path="/create-account" component={ CreateAccount } />
-            <Route exact path="/dashboard" component={ Dashboard } />
+            <PrivateRoute exact path="/dashboard" component={ Dashboard } />
           </Switch>
         </Container>
     </div>

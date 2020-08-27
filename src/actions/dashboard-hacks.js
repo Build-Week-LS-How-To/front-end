@@ -14,7 +14,7 @@ export const fetchHacks = () => dispatch => {
                 _limit: 5
             }
         })
-        .then( res => {
+        .then( res => { 
             console.log("Data from fetchHacks reducer", res.data)
             dispatch({
                 type: FETCH_HACKS_SUCCESS,

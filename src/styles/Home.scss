@@ -25,3 +25,24 @@
         }
     }
 }
+
+.vote-widget {
+    .vote-icon-group {
+        display: flex;
+        flex-flow: column nowrap;
+
+        span {
+            text-align: center;
+        }
+
+        .vote-icon {
+            width: 100%;
+            cursor: pointer;
+        }
+
+        .bottom {
+            margin-top: auto;
+        }
+    }
+
+}
