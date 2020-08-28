@@ -31,8 +31,9 @@ const MyHacks = (props) => {
                             <MyHacksCard
                                 key={hack.userId === 1}
                                 title={hack.title}
-                                body={hack.body}
-                                userId={hack.userId}
+                                description={hack.description}
+                                firstName={hack.firstName}
+                                lastName={hack.lastName}
                             />
                         )
                     })}

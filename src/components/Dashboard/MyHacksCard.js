@@ -10,10 +10,10 @@ const MyHacksCard = (props) => {
         <Card className="dashboard-hack" key={props.id}>
 
             <CardTitle className="dashboard-hack-title">{props.title}</CardTitle>
-            <CardText className="dashboard-hack-description">{props.body}</CardText>
+            <CardText className="dashboard-hack-description">{props.description}</CardText>
 
             <CardFooter className="dashboard-hack-footer">
-                <div>User Id: {props.userId}</div>
+                <div>Submitted By: {props.firstName} {props.lastName} </div>
 
                 <div className="icons">
                     <img src={EditIcon} alt="edit button" className="hackIcon editButton" />
