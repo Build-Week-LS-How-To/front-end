@@ -14,6 +14,8 @@ import HomePage from './Home/Home'
 import Login from './Login/Login'
 import CreateAccount from './CreateAccount/CreateAccount'
 import Dashboard from './Dashboard/Dashoboard'
+import AllHacks from './Hacks/AllHacks';
+import Hack from './Hacks/Hack'
 
 import {
   Container
@@ -29,6 +31,9 @@ function App() {
             <Route exact path="/login" component={ Login } />
             <Route exact path="/create-account" component={ CreateAccount } />
             <PrivateRoute exact path="/dashboard" component={ Dashboard } />
+
+            <Route exact path="/hacks" component={ AllHacks } />
+            <Route path="/hacks/:id" component={ Hack } />
           </Switch>
         </Container>
     </div>
