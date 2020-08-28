@@ -11,6 +11,7 @@ import {
 
 const initialState = {
     formValues: {
+        id: Date.now(),
         firstName: "",
         lastName: "",
         email: "",
