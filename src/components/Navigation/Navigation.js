@@ -46,7 +46,7 @@ const Navigation = () => {
                             </NavItem>
                             <NavItem>
                                 <NavLink>
-                                    <Link to='/'>Meet The Team</Link>
+                                    <Link to='/meetteam'>Meet The Team</Link>
                                 </NavLink>
                             </NavItem>
 
@@ -56,6 +56,8 @@ const Navigation = () => {
                                 </DropdownToggle>
                                 <DropdownMenu right>
                                     <Link to='/login'><DropdownItem>Sign In</DropdownItem></Link>
+                                    <DropdownItem divider />
+                                    <Link to='/dashboard'><DropdownItem>Dashboard</DropdownItem></Link>
                                     <DropdownItem divider />
                                     <Link to='/create-account'><DropdownItem>Create Account</DropdownItem></Link>
                                 </DropdownMenu>

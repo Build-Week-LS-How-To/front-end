@@ -1,6 +1,12 @@
 import { combineReducers } from 'redux'
-import hacksReducer from './hacks'
+import { hacksReducer } from './hacks'
+import { hacksStepsReducer } from './hacksSteps'
+import { createUserReducer } from './addNewUser'
 
-export default combineReducers({
+const rootReducer = combineReducers({
     hacksReducer,
-})
+    hacksStepsReducer,
+    createUserReducer
+});
+
+export default rootReducer

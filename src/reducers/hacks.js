@@ -10,7 +10,7 @@ const initialState = {
     error: ""
 }
 
-export default function hacksReducer(state = initialState, action) {
+export const hacksReducer = (state = initialState, action) => {
     switch(action.type) {
         case FETCH_HACKS_START:
             return {

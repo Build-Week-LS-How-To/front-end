@@ -12,11 +12,11 @@ import { createStore, applyMiddleware } from 'redux'
 import { composeWithDevTools } from 'redux-devtools-extension'
 
 // REDUCERS
-// import combineReducers from './reducers'
-import hacksReducer from './reducers/hacks'
+import rootReducer from './reducers'
+// import hacksReducer from './reducers/hacks'
 
 // STORE
-const store = createStore(hacksReducer, composeWithDevTools(
+const store = createStore(rootReducer, composeWithDevTools(
   applyMiddleware(thunk)
 ))
 
