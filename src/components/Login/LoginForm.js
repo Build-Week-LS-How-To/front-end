@@ -31,7 +31,7 @@ const LoginForm = (props) => {
     let history = useHistory();
     const handleLogin = (e) => {
         e.preventDefault();
-        axiosWithAuth()
+        axiosWithAuth()//auth setting
             .post('/api/users/login', login)
             .then( res => {
                 localStorage.setItem('token', res.data.token)
