@@ -27,7 +27,7 @@ const LoginForm = () => {
 
     const handleLogin = (e) => {
         e.preventDefault();
-        axiosWithAuth()//auth setting
+        axiosWithAuth()
             .post('/users/login', login)
             .then( res => {
                 localStorage.setItem('token', res.data.token)
@@ -54,6 +54,7 @@ const LoginForm = () => {
                     name='username'
                     value={ login.username }
                     onChange={ handleChanges }
+                    required
                 />
                 <Input
                     placeholder='Password'
@@ -61,10 +62,11 @@ const LoginForm = () => {
                     name='password'
                     value={ login.password }
                     onChange={ handleChanges }
+                    required
                 />
                 <Button
                     block
-                    onClick={handleLogin}
+                    type="submit"
                 >Login!</Button>
 
                 <div className="link">
