@@ -1,4 +1,5 @@
 import React from 'react'
+import { useHistory } from 'react-router-dom'
 
 // REDUX
 import { connect } from 'react-redux'
@@ -34,11 +35,12 @@ const CreateAccountForm = ({
     createUser,
 }) => {
 
-    console.log(values)
+    let history = useHistory();
 
     const handleSubmit = (e) => {
         e.preventDefault();
         createUser(values);
+        history.push('/login')
     }
 
     return(
@@ -47,6 +49,7 @@ const CreateAccountForm = ({
                 <FormGroup>
                     <Label for="firstName">First Name</Label>
                     <Input
+                        required
                         type="text"
                         name="firstName"
                         value={values.firstName}
@@ -67,6 +70,7 @@ const CreateAccountForm = ({
                 <FormGroup>
                     <Label for="email">Email Address</Label>
                     <Input
+                        required
                         type="email"
                         name="email"
                         value={ values.email }
@@ -77,6 +81,7 @@ const CreateAccountForm = ({
                 <FormGroup>
                     <Label for="firstName">Username</Label>
                     <Input
+                        required
                         type="text"
                         name="username"
                         value={ values.username }
@@ -87,6 +92,7 @@ const CreateAccountForm = ({
                 <FormGroup>
                     <Label for="password">Password</Label>
                     <Input
+                        required
                         type="password"
                         name="password"
                         value={ values.password }

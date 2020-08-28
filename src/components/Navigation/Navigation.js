@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Collapse,
   Navbar,
@@ -19,11 +19,26 @@ import { Link } from 'react-router-dom'
 // STYLES
 import '../../styles/navigation.scss'
 
-const Navigation = () => {
-
+const Navigation = (props) => {
+    console.log("props from nav", props)
     const [isOpen, setIsOpen] = useState(false);
+    const [loggedIn, setLoggedIn] = useState(false);
 
     const toggle = () => setIsOpen(!isOpen);
+
+    useEffect(()=>{
+      if (localStorage.getItem('token')) {
+        setLoggedIn(true);
+      }
+    }, []);
+  
+    const handleLogout = () => {
+      localStorage.removeItem('token')
+      setLoggedIn(false);
+    }
+
+    console.log(loggedIn)
+
   
     return (
       <div>
@@ -52,14 +67,24 @@ const Navigation = () => {
 
                             <UncontrolledDropdown nav inNavbar >
                                 <DropdownToggle nav caret className="nav-dropdown">
-                                    <span>Log In</span>
+                                    {loggedIn
+                                        ? 
+                                        <Link to='/dashboard'><span>Dashboard</span></Link>
+                                        :
+                                        <Link to='/login'><span>Login</span></Link>
+                                    }
                                 </DropdownToggle>
                                 <DropdownMenu right>
-                                    <Link to='/login'><DropdownItem>Sign In</DropdownItem></Link>
-                                    <DropdownItem divider />
-                                    <Link to='/dashboard'><DropdownItem>Dashboard</DropdownItem></Link>
-                                    <DropdownItem divider />
-                                    <Link to='/create-account'><DropdownItem>Create Account</DropdownItem></Link>
+                                    {loggedIn
+                                        ?
+                                        <Link to='/' onClick={handleLogout}><DropdownItem>Logout</DropdownItem></Link>
+                                        :
+                                        <>
+                                            <Link to='/login'><DropdownItem>Sign In</DropdownItem></Link>
+                                            <DropdownItem divider />
+                                            <Link to='/create-account'><DropdownItem>Create Account</DropdownItem></Link>
+                                        </>
+                                    }
                                 </DropdownMenu>
                             </UncontrolledDropdown>
                         </Nav>
