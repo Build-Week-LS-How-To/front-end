@@ -14,6 +14,7 @@ import HomePage from './Home/Home'
 import Login from './Login/Login'
 import CreateAccount from './CreateAccount/CreateAccount'
 import Dashboard from './Dashboard/Dashoboard'
+import MeetTeam from './MeetTeam/MeetTeam'
 
 import {
   Container
@@ -28,6 +29,7 @@ function App() {
             <Route exact path="/" component={ HomePage } />
             <Route exact path="/login" component={ Login } />
             <Route exact path="/create-account" component={ CreateAccount } />
+            <Route exact path='/meetteam' component={MeetTeam} />
             <PrivateRoute exact path="/dashboard" component={ Dashboard } />
           </Switch>
         </Container>

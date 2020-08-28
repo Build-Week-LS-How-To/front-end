@@ -46,7 +46,7 @@ const Navigation = () => {
                             </NavItem>
                             <NavItem>
                                 <NavLink>
-                                    <Link to='/'>Meet The Team</Link>
+                                    <Link to='/meetteam'>Meet The Team</Link>
                                 </NavLink>
                             </NavItem>
 
