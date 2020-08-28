@@ -57,6 +57,8 @@ const Navigation = () => {
                                 <DropdownMenu right>
                                     <Link to='/login'><DropdownItem>Sign In</DropdownItem></Link>
                                     <DropdownItem divider />
+                                    <Link to='/dashboard'><DropdownItem>Dashboard</DropdownItem></Link>
+                                    <DropdownItem divider />
                                     <Link to='/create-account'><DropdownItem>Create Account</DropdownItem></Link>
                                 </DropdownMenu>
                             </UncontrolledDropdown>

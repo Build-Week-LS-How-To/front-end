@@ -10,7 +10,6 @@ import {
 } from 'reactstrap';
 
 const LoginForm = (props) => {
-
     /*
         TODO:
         1) Handle Errors in the login for the UI
@@ -20,6 +19,8 @@ const LoginForm = (props) => {
         username: '',
         password: ''
     })
+
+    console.log(login)
 
     const handleChanges = (e) => {
         setLogin({
@@ -32,7 +33,7 @@ const LoginForm = (props) => {
     const handleLogin = (e) => {
         e.preventDefault();
         axiosWithAuth()//auth setting
-            .post('/api/users/login', login)
+            .post('/users/login', login)
             .then( res => {
                 localStorage.setItem('token', res.data.token)
                 history.push('/dashboard')
@@ -67,6 +68,7 @@ const LoginForm = (props) => {
                 />
                 <Button
                     block
+                    onClick={handleLogin}
                 >Login!</Button>
 
                 <div className="link">

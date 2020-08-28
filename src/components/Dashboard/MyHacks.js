@@ -25,7 +25,6 @@ const MyHacks = (props) => {
             ) : (
                 <div className="cards">
                     {console.log(props)}
-                    
                     {props.hacks.map ( hack => {
                         return(
                             <MyHacksCard
@@ -44,10 +43,11 @@ const MyHacks = (props) => {
 }
 
 const mapStateToProps = (state) => {
+    console.log("state from mapStateToProps", state)
     return {
-        isFetching: state.isFetching,
-        hacks: state.hacks,
-        error: state.error
+        isFetching: state.hacksReducer.isFetching,
+        hacks: state.hacksReducer.hacks,
+        error: state.hacksReducer.error
     }
 }
 
