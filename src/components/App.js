@@ -15,6 +15,7 @@ import Login from './Login/Login'
 import CreateAccount from './CreateAccount/CreateAccount'
 import Dashboard from './Dashboard/Dashoboard'
 import MeetTeam from './MeetTeam/MeetTeam'
+import EditHackForm from './Dashboard/EditHackForm'
 
 import {
   Container
@@ -30,6 +31,7 @@ function App() {
             <Route exact path="/login" component={ Login } />
             <Route exact path="/create-account" component={ CreateAccount } />
             <Route exact path='/meetteam' component={MeetTeam} />
+            <Route exact path='/edithack' component={EditHackForm} />
             <PrivateRoute exact path="/dashboard" component={ Dashboard } />
           </Switch>
         </Container>

@@ -4,12 +4,17 @@ import axios from 'axios';
 export const FETCH_HACKS_START = "FETCH_START"
 export const FETCH_HACKS_SUCCESS = "FETCH_HACKS_SUCCESS"
 export const FETCH_HACKS_ERROR = "FETCH_HACKS_ERROR"
-
+//init hack
+const initHack = {
+    title:'',
+    description:'',
+    id:Date.now()
+}
 export const fetchHacks = () => dispatch => {
     dispatch ({ type: FETCH_HACKS_START })
     
     axios
-        .get('https://jsonplaceholder.typicode.com/posts/', {
+        .get('https://how-to-1.herokuapp.com/api/howTo/users', {
             params: {
                 _limit: 5
             }
@@ -33,7 +38,7 @@ export const fetchAllHacks = () => dispatch => {
     dispatch ({ type: FETCH_HACKS_START })
     
     axios
-        .get('https://jsonplaceholder.typicode.com/posts/')
+        .get('https://how-to-1.herokuapp.com/api/howTo')
         .then( res => {
             console.log("Data from fetchHacks reducer", res.data)
             dispatch({
@@ -47,4 +52,9 @@ export const fetchAllHacks = () => dispatch => {
                 payload: err.message
             })
         })
+}
+export const editHack = ()=>dispatch=>{
+    dispatch ({ type: FETCH_HACKS_START });
+    axios
+    .put('https://how-to-1.herokuapp.com/api/howTo/:id',initHack)
 }

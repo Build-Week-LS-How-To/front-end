@@ -6,7 +6,7 @@ import {
 
 const initialState = {
     hacks: [],
-    isFetching: true,
+    isFetching: false,
     error: ""
 }
 
@@ -20,7 +20,7 @@ export default function hacksReducer(state = initialState, action) {
         case FETCH_HACKS_SUCCESS:
             return {
                 ...state,
-                isFetching: false,
+                isFetching: true,
                 hacks: action.payload
             }
 

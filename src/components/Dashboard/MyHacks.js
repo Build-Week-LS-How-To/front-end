@@ -1,8 +1,9 @@
 import React from 'react'
 
 // REDUX
+
 import { connect } from 'react-redux'
-import { fetchHacks } from '../../actions/dashboard-hacks'
+import { fetchHacks,fetchAllHacks } from '../../actions/dashboard-hacks'
 
 // COMPONENTS
 import MyHacksCard from './MyHacksCard'
@@ -14,29 +15,34 @@ const MyHacks = (props) => {
 
     return(
         <div className="dashboard-myhacks">
-            <h3>Welcome Back, Chris</h3>
+            <h3>Welcome Back, testUser</h3>
             <hr/>
             <h2>My Hacks</h2>
+            {props.fetchAllHacks()}
             {props.isFetching ? (
-                <div className="fetchng">
-                    <Spinner style={{width: '3rem', height: '3rem'}} type="grow"/>
-                    {props.fetchHacks()}
-                </div>
-            ) : (
                 <div className="cards">
-                    {console.log(props)}
-                    
-                    {props.hacks.map ( hack => {
-                        return(
-                            <MyHacksCard
-                                key={hack.userId === 1}
-                                title={hack.title}
-                                body={hack.body}
-                                userId={hack.userId}
-                            />
-                        )
-                    })}
+                
+                {props.hacks.map (hack => {
+                    return(
+                        
+                        <MyHacksCard
+                            key={hack.userId} //change by romeo
+                            title={hack.title}
+                            body={hack.description}
+                            stepone={hack.stepOneDescription}
+                            steptwo={hack.stepTwoDescription}
+                            stepthree={hack.stepThreeDescription}
+                            userId={hack.id}
+                        />)})}
                 </div>
+            ):(
+                <div className="fetchng">
+                 <Spinner style={{width: '3rem', height: '3rem'}} type="grow"/>
+                  
+                </div>
+                        
+                    
+                
             )}
         </div>
     )
@@ -52,5 +58,5 @@ const mapStateToProps = (state) => {
 
 export default connect(
     mapStateToProps,
-    { fetchHacks }
+    { fetchHacks,fetchAllHacks }
 )(MyHacks)
