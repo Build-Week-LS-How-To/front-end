@@ -6,7 +6,7 @@ import { createUserReducer } from './addNewUser'
 const rootReducer = combineReducers({
     hacksReducer,
     hacksStepsReducer,
-    createUserReducer
+    createUserReducer,
 });
 
 export default rootReducer
