@@ -9,28 +9,17 @@ import {
     Col
 } from 'reactstrap';
 
-// COMPONENTS
-import VoteWidget from './VoteWidget';
-
 // IMAGES
 import ImagePlaceholder from '../../images/308x234.png'
 
 const HomeHacksCard = (props) => {
-
-    console.log('props from HomeHacksCard.js', props)
 
     return(
         <Card left className="homepage-hack" key={props.id}>
             <Row>
                 <Col xs="3" className="hack-image-container">
                     <Row>
-                        <Col xs="2">
-                            <VoteWidget
-                                upVote={props.upVote}
-                                downVote={props.downVote}
-                            />
-                        </Col>
-                        <Col lg="10">
+                        <Col>
                             {props.img_url === null ? (
                                 <img className="hack-image" src={ImagePlaceholder} alt="placeholder" />
                             ) : (
