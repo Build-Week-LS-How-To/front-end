@@ -49,6 +49,14 @@ export const hacksReducer = (state = initialState, action) => {
                 isFetching: false,
                 hacks: action.payload
             }
+        
+        case RELOAD_HACKS_ERROR:
+            return {
+                ...state,
+                reload: false,
+                isFetching: false,
+                error: action.payload
+            }
 
         default:
             return(state)
