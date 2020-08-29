@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 
 // COMPONENTS
 import App from './components/App';
@@ -22,9 +22,9 @@ const store = createStore(rootReducer, composeWithDevTools(
 
 ReactDOM.render(
     <Provider store = {store}>
-      <Router>
+      <HashRouter>
         <App />
-      </Router>
+      </HashRouter>
     </Provider>,
   document.getElementById('root')
 );
