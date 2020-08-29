@@ -107,7 +107,6 @@ const CreateAccountForm = ({
 }
 
 const mapStateToProps = (state) => {
-    console.log(state.createUserReducer.formValues)
     return {
         values: state.createUserReducer.formValues,
     }

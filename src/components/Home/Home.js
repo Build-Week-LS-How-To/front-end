@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 // STYLES
 import '../../styles/Home.scss'
 
 // REDUX
 import { connect } from 'react-redux'
-import { fetchHacks } from '../../actions/dashboard-hacks'
+import { reloadHacks } from '../../actions/dashboard-hacks'
 import { Spinner } from 'reactstrap'
 
 // COMPONENTS
@@ -13,16 +13,18 @@ import HomeHacksCard from './HomeHacksCard'
 import SearchBar from './SearchBar'
 
 const HomePage = (props) => {
-    console.log("props from home page", props)
+    
+    const reload = () => window.location.reload()
+
     return(
         <div className="homepage-hacks">
         <h1>Welcome to How To</h1>
         <SearchBar />
-        
+
         {props.isFetching ? (
             <div className="fetchng">
                 <Spinner style={{width: '3rem', height: '3rem'}} type="grow"/>
-                {props.fetchHacks()}
+                {props.reloadHacks()}
             </div>
         ) : (
             <div className="cards">
@@ -57,5 +59,5 @@ const mapStateToProps = (state) => {
 
 export default connect(
     mapStateToProps,
-    { fetchHacks }
+    { reloadHacks }
 )(HomePage) 

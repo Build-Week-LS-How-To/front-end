@@ -19,8 +19,8 @@ import { Link } from 'react-router-dom'
 // STYLES
 import '../../styles/navigation.scss'
 
-const Navigation = (props) => {
-    console.log("props from nav", props)
+const Navigation = () => {
+
     const [isOpen, setIsOpen] = useState(false);
     const [loggedIn, setLoggedIn] = useState(false);
 
@@ -34,11 +34,9 @@ const Navigation = (props) => {
   
     const handleLogout = () => {
       localStorage.removeItem('token')
+      localStorage.removeItem('username')
       setLoggedIn(false);
     }
-
-    console.log(loggedIn)
-
   
     return (
       <div>

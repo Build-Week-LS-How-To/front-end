@@ -1,7 +1,6 @@
 import React from 'react';
 
 const StepCard = (props) => {
-    console.log('props from Hack.js', props)
 
     return(
         <div>

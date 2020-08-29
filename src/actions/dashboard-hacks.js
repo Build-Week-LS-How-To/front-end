@@ -5,17 +5,16 @@ export const FETCH_HACKS_START = "FETCH_START"
 export const FETCH_HACKS_SUCCESS = "FETCH_HACKS_SUCCESS"
 export const FETCH_HACKS_ERROR = "FETCH_HACKS_ERROR"
 
-export const FETCH_HACKS_STEPS_START = "FETCH_HACKS_STEPS_START"
-export const FETCH_HACKS_STEPS_SUCCESS = "FETCH_HACKS_STEPS_SUCCESS"
-export const FETCH_HACKS_STEPS_ERROR = "FETCH_HACKS_STEPS_ERROR"
+export const RELOAD_HACKS= "RELOAD_HACKS"
+export const RELOAD_HACKS_SUCCESS = "RELOAD_HACKS_SUCCESS"
+export const RELOAD_HACKS_ERROR = "RELOAD_HACKS_ERROR"
 
-export const fetchHacks = () => dispatch => {
+export const fetchHacks = (userid) => dispatch => {
     dispatch ({ type: FETCH_HACKS_START })
     
-    axiosWithAuth()
-        .get(`/howTo`)
+    axiosWithAuth(userid)
+        .get(`/howTo/${userid}`)
         .then( res => { 
-            console.log("Data from fetchHacks reducer", res.data)
             dispatch({
                 type: FETCH_HACKS_SUCCESS,
                 payload: res.data
@@ -29,21 +28,20 @@ export const fetchHacks = () => dispatch => {
         })
 }
 
-export const fetchHacksSteps = () => dispatch => {
-    dispatch ({ type: FETCH_HACKS_STEPS_START })
-
+export const reloadHacks = () => dispatch => {
+    dispatch ({ type: RELOAD_HACKS })
+    
     axiosWithAuth()
-        .get(`/howTo/steps`)
-        .then( res => {
-            console.log('Data from fetchHacksSteps reducer', res.data)
+        .get(`/howTo/`)
+        .then( res => { 
             dispatch({
-                type: FETCH_HACKS_STEPS_SUCCESS,
+                type: RELOAD_HACKS_SUCCESS,
                 payload: res.data
             })
         })
         .catch( err => {
-            dispatch ({
-                type: FETCH_HACKS_STEPS_ERROR,
+            dispatch({
+                type: RELOAD_HACKS_ERROR,
                 payload: err.message
             })
         })

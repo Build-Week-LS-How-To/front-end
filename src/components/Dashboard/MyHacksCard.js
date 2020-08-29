@@ -5,7 +5,6 @@ import EditIcon from 'bootstrap-icons/icons/pencil-square.svg'
 import DeleteIcon from 'bootstrap-icons/icons/trash-fill.svg'
 
 const MyHacksCard = (props) => {
-
     return(
         <Card className="dashboard-hack" key={props.id}>
 
@@ -13,7 +12,7 @@ const MyHacksCard = (props) => {
             <CardText className="dashboard-hack-description">{props.description}</CardText>
 
             <CardFooter className="dashboard-hack-footer">
-                <div>Submitted By: {props.firstName} {props.lastName} </div>
+                <div>Submitted By: {props.userID} </div>
 
                 <div className="icons">
                     <img src={EditIcon} alt="edit button" className="hackIcon editButton" />

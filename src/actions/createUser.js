@@ -17,7 +17,6 @@ export const createUser = (newUser) => dispatch => {
     axios
         .post('https://how-to-1.herokuapp.com/api/users/register/', newUser)
         .then( res => {
-            console.log("Put data from createUser Action", res.data)
             dispatch({
                 type: ADD_USER_SUCCESS,
                 payload: res.data

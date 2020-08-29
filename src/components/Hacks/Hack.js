@@ -4,7 +4,6 @@ import React from 'react';
 import StepCard from './StepCard';
 
 const Hack = (props) => {
-    console.log('props from Hack.js', props)
 
     return(
         <div>

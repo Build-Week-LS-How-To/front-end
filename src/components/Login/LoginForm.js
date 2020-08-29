@@ -31,6 +31,7 @@ const LoginForm = () => {
             .post('/users/login', login)
             .then( res => {
                 localStorage.setItem('token', res.data.token)
+                localStorage.setItem('username', login.username)
                 history.push('/dashboard')
                 window.location.reload()
             })
