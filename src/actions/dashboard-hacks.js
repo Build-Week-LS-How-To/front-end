@@ -4,7 +4,7 @@ import axios from 'axios';
 export const FETCH_HACKS_START = "FETCH_START"
 export const FETCH_HACKS_SUCCESS = "FETCH_HACKS_SUCCESS"
 export const FETCH_HACKS_ERROR = "FETCH_HACKS_ERROR"
-//init hack
+//init hack by romeo
 const initHack = {
     title:'',
     description:'',

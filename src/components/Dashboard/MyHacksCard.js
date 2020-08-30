@@ -3,9 +3,11 @@ import { Card, CardTitle, CardText, CardFooter } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import EditIcon from 'bootstrap-icons/icons/pencil-square.svg'
 import DeleteIcon from 'bootstrap-icons/icons/trash-fill.svg'
+import { useParams,useHistory} from "react-router-dom";
 
 const MyHacksCard = (props) => {
-
+    const params = useParams();
+    const{push}= useHistory();
 
     
     return(
