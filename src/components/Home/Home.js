@@ -5,7 +5,7 @@ import '../../styles/Home.scss'
 
 // REDUX
 import { connect } from 'react-redux'
-import { fetchAllHacks } from '../../actions/dashboard-hacks'
+import { reloadHacks } from '../../actions/dashboard-hacks'
 import { Spinner } from 'reactstrap'
 
 // COMPONENTS
@@ -13,27 +13,31 @@ import HomeHacksCard from './HomeHacksCard'
 import SearchBar from './SearchBar'
 
 const HomePage = (props) => {
-
+    
     return(
         <div className="homepage-hacks">
         <h1>Welcome to How To</h1>
         <SearchBar />
-        
+
         {props.isFetching ? (
             <div className="fetchng">
                 <Spinner style={{width: '3rem', height: '3rem'}} type="grow"/>
-                {props.fetchAllHacks()}
+                {props.reloadHacks()}
             </div>
         ) : (
             <div className="cards">
-                
                 {props.hacks.map ( hack => {
                     return (
                         <HomeHacksCard
                             key={hack.userId}
                             title={hack.title}
-                            body={hack.body}
-                            userId={hack.userId}
+                            description={hack.description}
+                            firstName={hack.firstName}
+                            lastName={hack.lastName}
+                            id={hack.id}
+                            upVote={hack.upVote}
+                            downVote={hack.downVote}
+                            img_url={hack.img_url}
                         />
                     )
                 })}
@@ -45,13 +49,13 @@ const HomePage = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-        isFetching: state.isFetching,
-        hacks: state.hacks,
-        error: state.error
+        isFetching: state.hacksReducer.isFetching,
+        hacks: state.hacksReducer.hacks,
+        error: state.hacksReducer.error
     }
 }
 
 export default connect(
     mapStateToProps,
-    { fetchAllHacks }
+    { reloadHacks }
 )(HomePage) 

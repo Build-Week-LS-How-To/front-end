@@ -13,7 +13,9 @@ import Navigation from './Navigation/Navigation'
 import HomePage from './Home/Home'
 import Login from './Login/Login'
 import CreateAccount from './CreateAccount/CreateAccount'
-import Dashboard from './Dashboard/Dashoboard'
+import Dashboard from './Dashboard/Dashboard'
+import AllHacks from './Hacks/AllHacks';
+import Hack from './Hacks/Hack'
 import MeetTeam from './MeetTeam/MeetTeam'
 import EditHackForm from './Dashboard/EditHackForm'
 
@@ -33,6 +35,9 @@ function App() {
             <Route exact path='/meetteam' component={MeetTeam} />
             <Route exact path='/edithack' component={EditHackForm} />
             <PrivateRoute exact path="/dashboard" component={ Dashboard } />
+
+            <Route exact path="/hacks" component={ AllHacks } />
+            <Route path="/hacks/:id" component={ Hack } />
           </Switch>
         </Container>
     </div>

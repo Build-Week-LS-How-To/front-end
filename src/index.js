@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 
 // COMPONENTS
 import App from './components/App';
@@ -12,19 +12,19 @@ import { createStore, applyMiddleware } from 'redux'
 import { composeWithDevTools } from 'redux-devtools-extension'
 
 // REDUCERS
-// import combineReducers from './reducers'
-import hacksReducer from './reducers/hacks'
+import rootReducer from './reducers'
+// import hacksReducer from './reducers/hacks'
 
 // STORE
-const store = createStore(hacksReducer, composeWithDevTools(
+const store = createStore(rootReducer, composeWithDevTools(
   applyMiddleware(thunk)
 ))
 
 ReactDOM.render(
     <Provider store = {store}>
-      <Router>
+      <HashRouter>
         <App />
-      </Router>
+      </HashRouter>
     </Provider>,
   document.getElementById('root')
 );
