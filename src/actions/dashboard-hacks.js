@@ -5,23 +5,6 @@ import axios from 'axios'
 export const FETCH_HACKS_START = "FETCH_START"
 export const FETCH_HACKS_SUCCESS = "FETCH_HACKS_SUCCESS"
 export const FETCH_HACKS_ERROR = "FETCH_HACKS_ERROR"
-<<<<<<< HEAD
-//init hack by romeo
-const initHack = {
-    title:'',
-    description:'',
-    id:Date.now()
-}
-export const fetchHacks = () => dispatch => {
-    dispatch ({ type: FETCH_HACKS_START })
-    
-    axios
-        .get('https://how-to-1.herokuapp.com/api/howTo/users', {
-            params: {
-                _limit: 5
-            }
-        })
-=======
 
 export const RELOAD_HACKS= "RELOAD_HACKS"
 export const RELOAD_HACKS_SUCCESS = "RELOAD_HACKS_SUCCESS"
@@ -36,7 +19,6 @@ export const fetchHacks = (userid) => dispatch => {
     
     axiosWithAuth(userid)
         .get(`/howTo/${userid}`)
->>>>>>> 287a176b6210e233de233cfa87961f9779ffcaee
         .then( res => { 
             dispatch({
                 type: FETCH_HACKS_SUCCESS,
@@ -74,11 +56,7 @@ export const fetchHacksSteps = (hackId) => dispatch => {
     dispatch ({ type: FETCH_HACK_STEPS })
 
     axios
-<<<<<<< HEAD
-        .get('https://how-to-1.herokuapp.com/api/howTo')
-=======
         .get(`https://how-to-1.herokuapp.com/api/howTo/${hackId}`)
->>>>>>> 287a176b6210e233de233cfa87961f9779ffcaee
         .then( res => {
             console.log("hack res from fetchHacksSteps", res.data[0])
             dispatch({
@@ -92,9 +70,4 @@ export const fetchHacksSteps = (hackId) => dispatch => {
                 payload: err.message
             })
         })
-}
-export const editHack = ()=>dispatch=>{
-    dispatch ({ type: FETCH_HACKS_START });
-    axios
-    .put('https://how-to-1.herokuapp.com/api/howTo/:id',initHack)
 }
