@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 
 // STYLES
 import '../../styles/Home.scss'
@@ -14,8 +14,6 @@ import SearchBar from './SearchBar'
 
 const HomePage = (props) => {
     
-    const reload = () => window.location.reload()
-
     return(
         <div className="homepage-hacks">
         <h1>Welcome to How To</h1>
