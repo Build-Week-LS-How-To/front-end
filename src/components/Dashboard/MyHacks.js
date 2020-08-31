@@ -49,6 +49,7 @@ const MyHacks = (props) => {
                             return(
                                 <MyHacksCard
                                     key={hack.userID}
+                                    id={hack.id}
                                     userID={hack.userID}
                                     title={hack.title}
                                     description={hack.description}

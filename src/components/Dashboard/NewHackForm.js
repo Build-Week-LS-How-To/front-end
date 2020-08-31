@@ -33,13 +33,12 @@ const NewHackForm = ({
     addHack
 }) => {
 
-    console.log(values)
-
     let history = useHistory();
 
     const handleSubmit = (e) => {
         e.preventDefault();
         addHack(values)
+        window.location.reload()
     }
     
     return(

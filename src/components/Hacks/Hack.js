@@ -21,7 +21,6 @@ const Hack = (props) => {
     return(
         <div className="hack">
             <header>
-                <img src={props.hack.img_url} className="hack-header-image"/>
                 <h1>{props.hack.title}</h1>
                 <p>{props.hack.description}</p>
             </header>

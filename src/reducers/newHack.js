@@ -12,8 +12,10 @@ import {
 
 const initialState = {
     formValues: {
+        "id": null,
         "title": "",
         "description": "",
+        "img_url": "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80",
         "stepOneTitle": "Step 1",
         "stepOneDescription": "",
         "stepTwoTitle": "Step 2",

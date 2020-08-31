@@ -13,7 +13,7 @@ export const ON_PASSWORD_CHANGE = "ON_PASSWORD_CHANGE"
   
 
 export const createUser = (newUser) => dispatch => {
-    dispatch( {type: ADD_NEW_USER});
+    dispatch({ type: ADD_NEW_USER });
     axios
         .post('https://how-to-1.herokuapp.com/api/users/register/', newUser)
         .then( res => {
