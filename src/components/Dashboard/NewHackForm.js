@@ -38,7 +38,6 @@ const NewHackForm = ({
     const handleSubmit = (e) => {
         e.preventDefault();
         addHack(values)
-        window.location.reload()
     }
     
     return(
