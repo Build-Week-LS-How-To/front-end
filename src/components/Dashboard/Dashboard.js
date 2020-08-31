@@ -15,10 +15,6 @@ import NewHackForm from './NewHackForm';
 
 const Dashboard = () => {
 
-    useEffect(()=>{
-        // window.location.reload()
-    })
-
     return(
         <div className="dashboard-container">
             <Row>
