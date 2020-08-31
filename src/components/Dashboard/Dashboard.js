@@ -17,6 +17,7 @@ const Dashboard = () => {
 
     useEffect(()=>{
         // window.location.reload()
+        
     })
 
     return(

@@ -37,7 +37,7 @@ export const reloadHacks = () => dispatch => {
     dispatch ({ type: RELOAD_HACKS })
     
     axiosWithAuth()
-        .get(`/howTo/`)
+        .get(`/howTo`)
         .then( res => { 
             dispatch({
                 type: RELOAD_HACKS_SUCCESS,

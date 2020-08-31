@@ -12,7 +12,7 @@ import {
 import axiosWithAuth from '../../utils/axiosWithAuth'
 
 const MyHacks = (props) => {
-
+   console.log('myhacks',props)
     const currentUsername = localStorage.getItem('username')
     const [userid, setUserId] = useState()
 
@@ -26,7 +26,7 @@ const MyHacks = (props) => {
                         setUserId(localStorage.getItem('userid'))
                     }
                 })
-            })
+            })//
             .catch ( err => {
                 console.error(err.message)
             })
@@ -34,45 +34,47 @@ const MyHacks = (props) => {
     return(
         <div className="dashboard-myhacks">
 
-            <h3>Welcome Back, {localStorage.getItem('username')}</h3>
-            <hr/>
-            <h2>My Hacks</h2>
-            {props.isFetching ? (
-                <div className="fetchng">
-                    <Spinner style={{width: '3rem', height: '3rem'}} type="grow"/>
-                    {props.fetchHacks(localStorage.getItem('userid'))}
-                </div>
-            ) : (
-                <div className="cards">
-                    {props.hacks.map ( hack => {
-                        if(hack.userID == userid ){
-                            return(
-                                <MyHacksCard
-                                    key={hack.userID}
-                                    userID={hack.userID}
-                                    title={hack.title}
-                                    description={hack.description}
-                                    firstName={hack.firstName}
-                                    lastName={hack.lastName}
-                                />
-                            )
-                        } 
-                    })}
-                </div>
-            )}
-        </div>
-    )
+        <h3>Welcome Back, {localStorage.getItem('username')}</h3>
+        <hr/>
+        <h2>My Hacks</h2>
+        {props.isFetching ? (
+            <div className="fetchng">
+                <p>Loading....</p>
+                <Spinner style={{width: '3rem', height: '3rem'}} type="grow"/>
+                
+                {props.fetchHacks(localStorage.getItem('userid'))}
+            </div>
+        ) : (
+            <div className="cards">
+                {props.hacks.map ( hack => {
+                    if(hack.userID == userid ){
+                        return(
+                            <MyHacksCard
+                                key={hack.userID}
+                                userID={hack.userID}
+                                title={hack.title}
+                                description={hack.description}
+                                firstName={hack.firstName}
+                                lastName={hack.lastName}
+                            />
+                        )
+                    } 
+                })}
+            </div>
+        )} 
+    </div>
+)
 }
 
 const mapStateToProps = (state) => {
-    return {
-        isFetching: state.hacksReducer.isFetching,
-        hacks: state.hacksReducer.hacks,
-        error: state.hacksReducer.error
-    }
+return {
+    isFetching: state.hacksReducer.isFetching,
+    hacks: state.hacksReducer.hacks,
+    error: state.hacksReducer.error
+}
 }
 
 export default connect(
-    mapStateToProps,
-    { fetchHacks }
+mapStateToProps,
+{ fetchHacks }
 )(MyHacks)
