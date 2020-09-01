@@ -10,22 +10,25 @@ import {
 } from 'reactstrap';
 import {axiosWithAuth} from '../../utils/axiosWithAuth';
 import { useParams, useHistory } from "react-router-dom";
-import axios from 'axios';
-export default function EditHackForm() {
+import {fetchHacks} from "../../actions/dashboard-hacks";
+import { connect } from 'react-redux'
+
+function EditHackForm(props) {
 const {id} = useParams();
 const { push } = useHistory();
 const [item, setItem] = useState([{
         title:'',
         description:'',
         id:Date.now()
-    }])  
-useEffect(()=>{
-        axiosWithAuth()
-        .get(`/howTo/${id}`)
-        .then(res=>{console.log('update',res);
-      setItem(res.data)})
-        .catch(err=>console.log(err))
-},[id])
+    }]) ; 
+
+// useEffect(()=>{
+//         axiosWithAuth()
+//         .get(`/howTo/${id}`)
+//         .then(res=>{console.log('update',res);
+//       setItem(res.data)})
+//         .catch(err=>console.log(err))
+// },[id])
 const changeHandler = e =>{
     setItem({...item, [e.target.name]:e.target.value})
 
@@ -48,6 +51,7 @@ const changeHandler = e =>{
 // }
     return (
         <div>
+            {props.fetchHacks(id)}
             <Form >
                 <FormGroup>
                     <Label>Title</Label>
@@ -62,3 +66,15 @@ const changeHandler = e =>{
         </div>
     )
 }
+const mapStateToProps = (state) => {
+    return {
+        isFetching: state.hacksReducer.isFetching,
+        hacks: state.hacksReducer.hacks,
+        error: state.hacksReducer.error
+    }
+}
+
+export default connect(
+    mapStateToProps,
+    { fetchHacks }
+)(EditHackForm) 

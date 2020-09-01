@@ -37,7 +37,7 @@ export const reloadHacks = () => dispatch => {
     dispatch ({ type: RELOAD_HACKS })
     
     axiosWithAuth()
-        .get(`/howTo`)
+        .get(`/howTo/`)
         .then( res => { 
             dispatch({
                 type: RELOAD_HACKS_SUCCESS,
@@ -58,7 +58,7 @@ export const fetchHacksSteps = (hackId) => dispatch => {
     axios
         .get(`https://how-to-1.herokuapp.com/api/howTo/${hackId}`)
         .then( res => {
-            console.log("hack res from fetchHacksSteps", res.data[1])
+            console.log("hack res from fetchHacksSteps", res.data[0])
             dispatch({
                 type: FETCH_STEPS_SUCCESS,
                 payload: res.data[0]

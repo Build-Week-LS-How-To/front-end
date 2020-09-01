@@ -15,15 +15,14 @@ import Login from './Login/Login'
 import CreateAccount from './CreateAccount/CreateAccount'
 import Dashboard from './Dashboard/Dashboard'
 import AllHacks from './Hacks/AllHacks';
-import Hack from './Hacks/Hack';
-import MeetTeam from './MeetTeam/MeetTeam';
-import EditHackForm from './Dashboard/EditHackForm';
-import MySingleHack from './Dashboard/MySingleHack';
-import MyHacksCard from './Dashboard/MyHacksCard';
+import Hack from './Hacks/Hack'
+import MeetTeam from './MeetTeam/MeetTeam'
+
 
 import {
   Container
 } from 'reactstrap'
+import EditHackForm from './Dashboard/EditHackForm';
 
 function App() {
   return (
@@ -35,10 +34,8 @@ function App() {
             <Route exact path="/login" component={ Login } />
             <Route exact path="/create-account" component={ CreateAccount } />
             <Route exact path='/meetteam' component={MeetTeam} />
-            <Route exact path='/edithack/:id' component={EditHackForm} />
             <PrivateRoute exact path="/dashboard" component={ Dashboard } />
-            {/* <Route exact path = '/singlehack/:id' component={MySingleHack} /> */}
-            {/* <Route exact path = '/myhack/:id' component={MyHacksCard} /> */}
+            <Route path="/edithack/:id" component={EditHackForm} />
             <Route exact path="/hacks" component={ AllHacks } />
             <Route path="/hacks/:id" component={ Hack } />
           </Switch>
