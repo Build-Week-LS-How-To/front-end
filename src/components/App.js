@@ -33,7 +33,7 @@ function App() {
             <Route exact path="/login" component={ Login } />
             <Route exact path="/create-account" component={ CreateAccount } />
             <Route exact path='/meetteam' component={MeetTeam} />
-            <Route exact path='/edithack' component={EditHackForm} />
+            <Route exact path='/edithack/:id' component={EditHackForm} />
             <PrivateRoute exact path="/dashboard" component={ Dashboard } />
 
             <Route exact path="/hacks" component={ AllHacks } />

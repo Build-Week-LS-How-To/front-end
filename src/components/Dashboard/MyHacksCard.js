@@ -16,7 +16,7 @@ const MyHacksCard = (props) => {
                 <div>Submitted By: {props.userID} </div>
 
                 <div className="icons">
-                    <Link to = '/edithack'><img src={EditIcon} alt="edit button" className="hackIcon editButton" /></Link>
+                    <Link to ={`/edithack/${props.UserID}`}><img src={EditIcon} alt="edit button" className="hackIcon editButton" /></Link>
                     <img src={DeleteIcon} alt="delete button" className="hackIcon deleteButton" />
                 </div>
             </CardFooter>
