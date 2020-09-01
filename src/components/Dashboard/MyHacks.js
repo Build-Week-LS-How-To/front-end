@@ -26,7 +26,7 @@ const MyHacks = (props) => {
                         setUserId(localStorage.getItem('userid'))
                     }
                 })
-            })//
+            })
             .catch ( err => {
                 console.error(err.message)
             })

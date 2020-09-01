@@ -6,6 +6,12 @@ import DeleteIcon from 'bootstrap-icons/icons/trash-fill.svg'
 import { useParams,useHistory} from "react-router-dom";
 
 const MyHacksCard = (props) => {
+    console.log('hackscard',props);
+    const{push}= useHistory();
+    const params = useParams();
+    const updateHandler = ()=>{
+        push(`/edithack/${params.id}`);
+      }
     return(
         <Card className="dashboard-hack" key={props.id}>
 
@@ -16,7 +22,8 @@ const MyHacksCard = (props) => {
                 <div>Submitted By: {props.userID} </div>
 
                 <div className="icons">
-                    <Link to ={`/edithack/${props.UserID}`}><img src={EditIcon} alt="edit button" className="hackIcon editButton" /></Link>
+                   {/* <img  src={EditIcon} alt="edit button" className="hackIcon editButton" /> */}
+                    <Link to ={`/edithack/${props.id}`}><img src={EditIcon} alt="edit button" className="hackIcon editButton" /></Link>
                     <img src={DeleteIcon} alt="delete button" className="hackIcon deleteButton" />
                 </div>
             </CardFooter>

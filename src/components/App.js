@@ -15,9 +15,11 @@ import Login from './Login/Login'
 import CreateAccount from './CreateAccount/CreateAccount'
 import Dashboard from './Dashboard/Dashboard'
 import AllHacks from './Hacks/AllHacks';
-import Hack from './Hacks/Hack'
-import MeetTeam from './MeetTeam/MeetTeam'
-import EditHackForm from './Dashboard/EditHackForm'
+import Hack from './Hacks/Hack';
+import MeetTeam from './MeetTeam/MeetTeam';
+import EditHackForm from './Dashboard/EditHackForm';
+import MySingleHack from './Dashboard/MySingleHack';
+import MyHacksCard from './Dashboard/MyHacksCard';
 
 import {
   Container
@@ -35,7 +37,8 @@ function App() {
             <Route exact path='/meetteam' component={MeetTeam} />
             <Route exact path='/edithack/:id' component={EditHackForm} />
             <PrivateRoute exact path="/dashboard" component={ Dashboard } />
-
+            {/* <Route exact path = '/singlehack/:id' component={MySingleHack} /> */}
+            {/* <Route exact path = '/myhack/:id' component={MyHacksCard} /> */}
             <Route exact path="/hacks" component={ AllHacks } />
             <Route path="/hacks/:id" component={ Hack } />
           </Switch>
