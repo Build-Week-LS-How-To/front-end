@@ -48,6 +48,7 @@ const MyHacks = (props) => {
                         if(hack.userID == userid ){
                             return(
                                 <MyHacksCard
+                                    id={hack.id}
                                     key={hack.userID}
                                     id={hack.id}
                                     userID={hack.userID}
