@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 
 import {
     Row,
@@ -14,10 +14,6 @@ import MyHacks from './MyHacks';
 import NewHackForm from './NewHackForm';
 
 const Dashboard = () => {
-
-    useEffect(()=>{
-        // window.location.reload()
-    })
 
     return(
         <div className="dashboard-container">

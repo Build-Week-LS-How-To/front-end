@@ -1,6 +1,9 @@
 @import './imports.scss';
 
 .dashboard-container {
+    label {
+        color: $primaryBlue;
+    }
     .dashboard-card {
         padding: 20px;
     }

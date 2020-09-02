@@ -18,12 +18,9 @@ const Hack = (props) => {
         props.fetchHacksSteps(hackId)
     }, []);
 
-
-    console.log("Hack from props", props.hack.stepOneDescription)
     return(
         <div className="hack">
             <header>
-                <img src={props.hack.img_url} className="hack-header-image"/>
                 <h1>{props.hack.title}</h1>
                 <p>{props.hack.description}</p>
             </header>
@@ -47,7 +44,7 @@ const Hack = (props) => {
 }
 
 const mapStateToProps = (state) => {
-    console.log("State from Hack.js", state.hacksStepsReducer.hack)
+
     return {
         isFetching: state.hacksStepsReducer.isFetching,
         hack: state.hacksStepsReducer.hack,
