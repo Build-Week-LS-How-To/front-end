@@ -18,9 +18,11 @@ import AllHacks from './Hacks/AllHacks';
 import Hack from './Hacks/Hack'
 import MeetTeam from './MeetTeam/MeetTeam'
 
+
 import {
   Container
 } from 'reactstrap'
+import EditHackForm from './Dashboard/EditHackForm';
 
 function App() {
   return (
@@ -33,7 +35,7 @@ function App() {
             <Route exact path="/create-account" component={ CreateAccount } />
             <Route exact path='/meetteam' component={MeetTeam} />
             <PrivateRoute exact path="/dashboard" component={ Dashboard } />
-
+            <Route path="/edithack/:id" component={EditHackForm} />
             <Route exact path="/hacks" component={ AllHacks } />
             <Route path="/hacks/:id" component={ Hack } />
           </Switch>
