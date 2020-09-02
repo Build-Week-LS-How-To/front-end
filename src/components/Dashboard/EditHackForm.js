@@ -1,4 +1,4 @@
-import React ,{useState,useEffect}from 'react';
+import React, { useState } from 'react';
 //STYLES
 import '../../styles/edithack.scss';
 import {
@@ -8,14 +8,13 @@ import {
     Button,
     Label,
 } from 'reactstrap';
-import {axiosWithAuth} from '../../utils/axiosWithAuth';
-import { useParams, useHistory } from "react-router-dom";
-import {fetchHacks} from "../../actions/dashboard-hacks";
+import { useParams } from "react-router-dom";
+import { fetchHacks } from "../../actions/dashboard-hacks";
 import { connect } from 'react-redux'
 
 function EditHackForm(props) {
 const {id} = useParams();
-const { push } = useHistory();
+
 const [item, setItem] = useState([{
         title:'',
         description:'',

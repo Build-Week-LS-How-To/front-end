@@ -21,8 +21,6 @@ import {
     Label,
 } from 'reactstrap'
 
-import { useHistory } from 'react-router-dom';
-
 const NewHackForm = ({
     values,
     onTitleChange,
@@ -32,8 +30,6 @@ const NewHackForm = ({
     onStepThreeChange,
     addHack
 }) => {
-
-    let history = useHistory();
 
     const handleSubmit = (e) => {
         e.preventDefault();

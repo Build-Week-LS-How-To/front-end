@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import React from 'react';
 import axiosWithAuth from '../../utils/axiosWithAuth'
 import { Link } from 'react-router-dom';
 
@@ -14,8 +13,6 @@ import { Card, CardTitle, CardText, CardFooter } from 'reactstrap';
 const MyHacksCard = (props) => {
 
     console.log(props)
-
-    const history = useHistory()
 
     const handleDelete =()=> {
         axiosWithAuth()

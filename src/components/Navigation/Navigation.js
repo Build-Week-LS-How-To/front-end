@@ -54,12 +54,12 @@ const Navigation = () => {
                         <Nav className="mr-auto" navbar>
                             <NavItem>
                                 <NavLink>
-                                    <a href="https://how-to-awesomeness.netlify.app/marketing.html" target="_blank">About</a>
+                                    <a rel="noopener noreferrer" href="https://how-to-awesomeness.netlify.app/marketing.html" target="_blank">About</a>
                                 </NavLink>
                             </NavItem>
                             <NavItem>
                                 <NavLink>
-                                    <a href="https://how-to-awesomeness.netlify.app/team.html" target="_blank">Meet The Team</a>
+                                    <a rel="noopener noreferrer" href="https://how-to-awesomeness.netlify.app/team.html" target="_blank">Meet The Team</a>
                                 </NavLink>
                             </NavItem>
 

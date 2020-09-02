@@ -50,7 +50,6 @@ const MyHacks = (props) => {
                                 <MyHacksCard
                                     id={hack.id}
                                     key={hack.userID}
-                                    id={hack.id}
                                     userID={hack.userID}
                                     title={hack.title}
                                     description={hack.description}
